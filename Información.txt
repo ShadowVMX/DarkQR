@@ -1,0 +1,17 @@
+
+Aclarar de primera mano que no me hago responsable del uso indebido de los códigos QR generados, 
+esta herramienta puede tener todo tipo de utilidades tanto positivas como negativas, por lo que no tengo
+ninguna responsabilidad sobre la finalidad.
+
+DarkQR tiene como objetivo crear QRs para los usuarios, de esta forma, las empresas pueden aprovechar el máximo potencial de la misma
+a través de una sencilla e intuitiva ejecución con diversos parámetros.
+
+¿Qué podemos hacer?
+
+1- Crear códigos QR para las distintas URLs (Ojo con el phishing, espero no ver mi herramienta rulando por ahí para esos fines).
+
+2- Crear números de teléfono para poder copiar y pegar directamente.
+
+
+
+Espero que os sirva --- ShadowVMX.
