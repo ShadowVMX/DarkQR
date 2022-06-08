@@ -1,0 +1,81 @@
+#!/bin/bash
+#
+#DarkQR ...
+#
+########################
+#		       #
+#  DarkQR - ShadowVMX  #
+#                      #
+########################
+#
+#
+#No me hago responsable del uso indebido de la herramienta DarkQR.
+#
+#
+
+
+trap DarkQRexit SIGINT
+
+
+DarkQRexit() {
+	echo " "
+	sleep 1
+	echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Saliendo ..."
+	echo " "
+	sleep 1
+	exit
+}
+
+
+
+if [[ -z $1 ]] || [[ -z $2 ]] || [[ -z $3 ]] || [[ -z $4 ]] || [[ -z $5 ]] || [[ -z $6 ]] ; then
+	toilet -f smblock --filter border:metal -w 100 Dark-QR
+	echo "       $(tput setaf 8)@ShadowVMX v1.0"
+	echo " "
+	echo "$(tput setaf 6)[$(tput setaf 1)-$(tput setaf 6)] $(tput setaf 6)[$(tput setaf 1)OPTIONS$(tput setaf 6)]"
+	echo " "
+	echo "    $(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]DarkQR $(tput setaf 3)--url $(tput setaf 6)https://www.web.com $(tput setaf 3)--size $(tput setaf 6)20 $(tput setaf 3)--nameimage $(tput setaf 6)mypicture"
+	echo " "
+	echo "    $(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]DarkQR $(tput setaf 3)--phone $(tput setaf 6)+34666666666 $(tput setaf 3)--size $(tput setaf 6)20 $(tput setaf 3)--nameimage $(tput setaf 6)mypicture"
+	echo " "
+	echo "$(tput setaf 6)[$(tput setaf 1)-$(tput setaf 6)] $(tput setaf 6)[$(tput setaf 1)-->$(tput setaf 6)]Usa el teléfono y la URL entre comillas."
+	echo " "
+	exit
+fi
+
+
+#qrencode -m 20 -o URL/onnetcenter.png "https://www.onnetcenter.es"
+
+
+if [[ $1 == "--url" ]] && [[ $3 == "--size" ]] && [[ $5 == "--nameimage" ]] ; then
+	echo " "
+	mkdir URL
+	echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Generando QR para la Web especificada, espere ..."
+	echo " "
+	sleep 1.5
+	qrencode -m $4 -o URL/$6.png $2
+	echo "$(tput setaf 6)[$(tput setaf 1)!$(tput setaf 6)]Completado..."
+	echo " "
+	sleep 1.5
+	echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Reporte guardado en la carpeta URL."
+	echo " "
+	sleep 1
+	exit
+fi
+
+
+if [[ $1 == "--phone" ]] && [[ $3 == "--size" ]] && [[ $5 == "--nameimage" ]] ; then
+        echo " "
+        mkdir Phone
+        echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Generando QR para el teléfono especificado, espere ..."
+        echo " "
+        sleep 1.5
+        qrencode -o Phone/$6.png -s $4 $2
+        echo "$(tput setaf 6)[$(tput setaf 1)!$(tput setaf 6)]Completado..."
+        echo " "
+        sleep 1.5
+        echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Reporte guardado en la carpeta URL."
+        echo " "
+        sleep 1
+        exit
+fi
