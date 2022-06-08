@@ -74,7 +74,7 @@ if [[ $1 == "--phone" ]] && [[ $3 == "--size" ]] && [[ $5 == "--nameimage" ]] ; 
         echo "$(tput setaf 6)[$(tput setaf 1)!$(tput setaf 6)]Completado..."
         echo " "
         sleep 1.5
-        echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Reporte guardado en la carpeta URL."
+        echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Reporte guardado en la carpeta Phone."
         echo " "
         sleep 1
         exit
