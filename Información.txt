@@ -12,6 +12,7 @@ a través de una sencilla e intuitiva ejecución con diversos parámetros.
 
 2- Crear números de teléfono para poder copiar y pegar directamente.
 
+3- Crear QRs con SSID y Password para los distintos WiFis o AP.
 
 
 Espero que os sirva --- ShadowVMX.
