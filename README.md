@@ -1,6 +1,8 @@
 # DarkQR v2.0
 
-![ParrotPentesting-2022-06-08-14-07-23](https://user-images.githubusercontent.com/92258683/172612701-ab9a132d-2079-46fa-8664-ca0166648abf.png)
+
+![ParrotPentesting-2022-06-13-12-45-36](https://user-images.githubusercontent.com/92258683/173337476-e6ae7432-6d59-47e2-ad78-ff54bedce8ec.png)
+
 
 
 DarkQR tiene como objetivo crear QRs para los usuarios, de esta forma, las empresas pueden aprovechar el máximo potencial de la misma a través de una sencilla e intuitiva ejecución con diversos parámetros.
