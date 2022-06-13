@@ -30,13 +30,15 @@ DarkQRexit() {
 
 if [[ -z $1 ]] || [[ -z $2 ]] || [[ -z $3 ]] || [[ -z $4 ]] || [[ -z $5 ]] || [[ -z $6 ]] ; then
 	toilet -f smblock --filter border:metal -w 100 Dark-QR
-	echo "       $(tput setaf 8)@ShadowVMX v1.0"
+	echo "       $(tput setaf 8)@ShadowVMX v2.0"
 	echo " "
 	echo "$(tput setaf 6)[$(tput setaf 1)-$(tput setaf 6)] $(tput setaf 6)[$(tput setaf 1)OPTIONS$(tput setaf 6)]"
 	echo " "
 	echo "    $(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]DarkQR $(tput setaf 3)--url $(tput setaf 6)https://www.web.com $(tput setaf 3)--size $(tput setaf 6)20 $(tput setaf 3)--nameimage $(tput setaf 6)mypicture"
 	echo " "
 	echo "    $(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]DarkQR $(tput setaf 3)--phone $(tput setaf 6)+34666666666 $(tput setaf 3)--size $(tput setaf 6)20 $(tput setaf 3)--nameimage $(tput setaf 6)mypicture"
+	echo " "
+	echo "    $(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]DarkQR $(tput setaf 3)--SSID $(tput setaf 6)MyWiFi $(tput setaf 3)--password $(tput setaf 6)Pa$$W0rD $(tput setaf 3)--nameimage $(tput setaf 6)mypicture"
 	echo " "
 	echo "$(tput setaf 6)[$(tput setaf 1)-$(tput setaf 6)] $(tput setaf 6)[$(tput setaf 1)-->$(tput setaf 6)]Usa el teléfono y la URL entre comillas."
 	echo " "
@@ -74,8 +76,27 @@ if [[ $1 == "--phone" ]] && [[ $3 == "--size" ]] && [[ $5 == "--nameimage" ]] ; 
         echo "$(tput setaf 6)[$(tput setaf 1)!$(tput setaf 6)]Completado..."
         echo " "
         sleep 1.5
-        echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Reporte guardado en la carpeta Phone."
+        echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Reporte guardado en la carpeta URL."
         echo " "
         sleep 1
         exit
 fi
+
+
+if [[ $1 == "--SSID" ]] && [[ $3 == "--password" ]] && [[ $5 == "--nameimage" ]] ; then
+        echo " "
+        mkdir SSID
+        echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Generando QR para el SSID especificado, espere ..."
+	sleep 1.5
+	qrencode "WIFI:T:WPA;S:$2;P:$4;;" -o SSID/$6.png
+        echo " "
+	echo "$(tput setaf 6)[$(tput setaf 1)!$(tput setaf 6)]Completado..."
+        echo " "
+        sleep 1.5
+        echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Reporte guardado en la carpeta WiFi."
+        echo " "
+        sleep 1
+        exit
+fi
+
+
