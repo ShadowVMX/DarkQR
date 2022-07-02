@@ -1,4 +1,4 @@
-# DarkQR v2.0
+# DarkQR v3.0
 
 
 ![ParrotPentesting-2022-06-13-12-45-36](https://user-images.githubusercontent.com/92258683/173337476-e6ae7432-6d59-47e2-ad78-ff54bedce8ec.png)
