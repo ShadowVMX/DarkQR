@@ -16,13 +16,16 @@ echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Updating ... "
 apt update -y &> /dev/null
 echo " "
 echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Upgrading ... "
-apt full-upgrade -y &> /dev/null
+#apt full-upgrade -y &> /dev/null
 echo " "
 echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Installing qrencode ... "
 apt install qrencode -y &> /dev/null
 echo " "
 echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Installing Toilet ... "
 apt install toilet -y &> /dev/null
+echo " "
+echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Installing zbar-tools ... "
+apt install zbar-tools -y &> /dev/null
 echo " "
 echo "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]Installing DarkQR ... "
 chmod +x DarkQR
