@@ -30,7 +30,7 @@ DarkQRexit() {
 
 if [[ -z $1 ]] || [[ -z $2 ]] || [[ -z $3 ]] || [[ -z $4 ]] || [[ -z $5 ]] || [[ -z $6 ]] ; then
 	toilet -f smblock --filter border:metal -w 100 Dark-QR
-	echo "       $(tput setaf 8)@ShadowVMX v3.0"
+	echo "       $(tput setaf 8)@ShadowVMX v3.1"
 	echo " "
 	echo "$(tput setaf 6)[$(tput setaf 1)-$(tput setaf 6)] $(tput setaf 6)[$(tput setaf 1)OPTIONS$(tput setaf 6)]"
 	echo " "
@@ -39,6 +39,8 @@ if [[ -z $1 ]] || [[ -z $2 ]] || [[ -z $3 ]] || [[ -z $4 ]] || [[ -z $5 ]] || [[
 	echo "    $(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]DarkQR $(tput setaf 3)--phone $(tput setaf 6)+34666666666 $(tput setaf 3)--size $(tput setaf 6)20 $(tput setaf 3)--nameimage $(tput setaf 6)mypicture"
 	echo " "
 	echo "    $(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]DarkQR $(tput setaf 3)--SSID $(tput setaf 6)MyWiFi $(tput setaf 3)--password $(tput setaf 6)Pa$$W0rD $(tput setaf 3)--nameimage $(tput setaf 6)mypicture"
+	echo " "
+	echo "    $(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]DarkQR $(tput setaf 3)--check $(tput setaf 6)/root/folder/img.png $(tput setaf 3)--security $(tput setaf 6)QR $(tput setaf 3)--option $(tput setaf 6)extract $(tput setaf 1)[$(tput setaf 2)Beta Version$(tput setaf 1)]$(tput setaf 6)."
 	echo " "
 	echo "$(tput setaf 6)[$(tput setaf 1)-$(tput setaf 6)] $(tput setaf 6)[$(tput setaf 1)-->$(tput setaf 6)]Usa el teléfono y la URL entre comillas."
 	echo " "
@@ -100,3 +102,28 @@ if [[ $1 == "--SSID" ]] && [[ $3 == "--password" ]] && [[ $5 == "--nameimage" ]]
 fi
 
 
+if [[ $1 == "--check" ]] && [[ $3 == "--security" ]] && [[ $5 == "--option" ]] ; then
+        echo " "
+        echo "$(tput setaf 1)[$(tput setaf 2)Beta Version$(tput setaf 1)]$(tput setaf 6)."
+        echo " "
+        sleep 1
+	echo " "
+	echo "$(tput setaf 6)[$(tput setaf 1)!$(tput setaf 6)]$(tput setaf 3)Extrayendo información..."
+	sleep 1
+        echo " "
+        echo -n "$(tput setaf 6)[$(tput setaf 1)*$(tput setaf 6)]$(tput setaf 2)" && zbarimg $2 2> /dev/null
+	if [[ $? == 1 ]] ; then
+		echo " "
+		echo "$(tput setaf 1)[$(tput setaf 6)*$(tput setaf 1)]$(tput setaf 2)Error, archivo o carpeta erróneos."
+        	echo " "
+		sleep 1.5
+		exit
+	fi
+	echo " "
+	mkdir Reporte
+	zbarimg $2 > Reporte/reporteQR.txt 2> /dev/null
+	echo "$(tput setaf 3)[$(tput setaf 6)*$(tput setaf 3)]$(tput setaf 6)Reporte guardado en carpeta REPORTE."
+	echo " "
+        sleep 1
+        exit
+fi
