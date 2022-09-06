@@ -32,7 +32,7 @@ DarkQR tiene como objetivo crear QRs para los usuarios, de esta forma, las empre
 
 ![ParrotPentesting-2022-06-08-14-08-28](https://user-images.githubusercontent.com/92258683/172613079-f88278ba-d539-420e-9d34-b3ce6dca4b6e.png)
 
-4- ACTUALIZADO (3.1).
+4- **ACTUALIZADO (3.1).**
 
 ![ParrotPentesting-2022-09-06-19-27-03](https://user-images.githubusercontent.com/92258683/188745356-ba6aab59-3a1b-41f6-9154-e635cf7802d2.png)
 
